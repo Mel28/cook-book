@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Recipes</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
   {% for recipe in recipes %}
             {{recipe.recipe_name}}
             {{recipe.category_name}}
@@ -15,6 +8,20 @@
             {{recipe.contains_meat}}
             {{recipe.country_origin}}
             {{recipe.region_origin}}
-        {% endfor %}  
-</body>
-</html>
+        {% endfor %} 
+        <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+
+{% endblock %}
