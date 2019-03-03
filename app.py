@@ -19,7 +19,7 @@ def get_recipes():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('addrecipe.html',
-        recipes = mongo.db.recipes.find())
+        categories=mongo.db.categories.find())
     
     
 @app.route('/insert_recipe', methods=['POST'])
@@ -57,6 +57,30 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
+@app.route('/get_categories')
+def get_categories():
+    return render_template('categories.html',
+        categories=mongo.db.categories.find())
+        
+@app.route('/delete_category/<category_id>')
+def delete_category(category_id):
+    mongo.db.categories.remove({'_id': ObjectId(category_id)})
+    return redirect(url_for('get_categories'))
+
+    
+@app.route('/update_category/<category_id>', methods=['POST'])
+def update_category(category_id):
+    mongo.db.categories.update(
+        {'_id': ObjectId(category_id)},
+        {'category_name': request.form.get['category_name']})
+    return redirect(url_for('get_categories'))
+    
+@app.route('/insert_category', methods=['POST'])
+def insert_category():
+    category_doc = {'category_name': request.form.get('category_name')}
+    mongo.db.categories.insert_one(category_doc)
+    return redirect(url_for('get_categories'))
+    
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -1,8 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Add Recipe</h3>
 <div class="row">
-    <form action="" method="POST" class="col s12">
+    <form action="{{ url_for('insert_recipe') }}" method="POST"  class="col s12">
         <div class="row">
+             <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select id="category" name="category_name">
+                  <option value="">Choose Category</option>
+                  {% for cat in categories %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                  {% endfor %}
+                </select>
+                    <label>Recipe Category</label>
+                </div>
+            </div>
             <div class="input-field col s12">
                 <i class="material-icons prefix">Recipe</i>
                 <input id="recipe_name" name="recipe_name" type="text">
@@ -28,6 +40,14 @@
                 <i class="material-icons prefix">Country of Origin</i>
                 <textarea name="country_origin" id="country_origin" class="materialize-textarea"></textarea>
                 <label for="icon_telephone">Country of Origin</label>
+            </div>
+        </div>
+        </div>
+         <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">Region of Origin</i>
+                <textarea name="region_origin" id="region_origin" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Region of Origin</label>
             </div>
         </div>
         </div>
