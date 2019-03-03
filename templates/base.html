@@ -9,6 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 </head>
 <body>
+    <header>
+        <!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="{{url_for('get_recipes')}}">Indian</a></li>
+  <li><a href="{{url_for('get_recipes')}}">Oriental</a></li>
+  <li class="divider"></li>
+   <li><a href="{{url_for('get_recipes')}}">Vegetarian</a></li>
+   <li><a href="{{url_for('get_recipes')}}">Vegan</a></li>
+  <li><a href="{{url_for('get_recipes')}}">European</a></li>
+  <li class="divider"></li>
+   <li><a href="{{url_for('get_recipes')}}">Pub Meals</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="{{url_for('get_recipes')}}">Home</a></li>
+      <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+    </header>
     {% block content %} 
     {% endblock %}
 

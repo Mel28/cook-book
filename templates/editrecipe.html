@@ -1,0 +1,64 @@
+{% extends 'base.html'%} {% block content %}
+
+<h3>Edit Recipe</h3>
+<div class="row">
+    <form action="{{ url_for('update_recipe') }}" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <select id="category" name="category_name">
+                  <option value="" disabled selected>Choose Category</option>
+                  {% for cat in categories %}
+                      {% if cat.category_name == recipe.category_name%}
+                      <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                      {% else %}
+                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+                <label>Recipe Category</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">Recipe</i>
+                <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipe.recipe_name}}">
+                <label for="icon_prefix">Recipe Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">Ingredients</i>
+                <textarea name="recipe_ingredients" id="recipe_ingredients" class="materialize-textarea">{{recipe.recipe_ingredients}}</textarea>
+                <label for="icon_telephone">Recipe Ingredients</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">Method</i>
+                <textarea name="recipe_method" id="recipe_method" class="materialize-textarea">{{recipe.recipe_method}}</textarea>
+                <label for="icon_telephone">Recipe Method</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="switch">
+                <label>
+                    {% if recipe.contains_meat %}
+                          <input id="contains_meat" name="contains_meat" type="checkbox" checked>
+                    {% else %}
+                         <input id="contains_meat" name="contains_meat" type="checkbox">
+                    {% endif%}
+                  <span class="lever"></span>
+                  Is Urgent
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Edit Recipe
+                <i class="material-icons right">recipe_add</i>
+             </button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
