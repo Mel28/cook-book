@@ -12,14 +12,14 @@
     <header>
         <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="{{url_for('get_recipes')}}">Indian</a></li>
-  <li><a href="{{url_for('get_recipes')}}">Oriental</a></li>
+  <li><a href="{{url_for('get_categoriestype', food_type='Indian')}}">Indian</a></li>
+  <li><a href="{{url_for('get_categoriestype', food_type='Oriental')}}">Oriental</a></li>
   <li class="divider"></li>
-   <li><a href="{{url_for('get_recipes')}}">Vegetarian</a></li>
-   <li><a href="{{url_for('get_recipes')}}">Vegan</a></li>
-  <li><a href="{{url_for('get_recipes')}}">European</a></li>
+   <li><a href="{{url_for('get_categoriestype', food_type='Vegetarian')}}">Vegetarian</a></li>
+   <li><a href="{{url_for('get_categoriestype', food_type='Vegan')}}">Vegan</a></li>
+  <li><a href="{{url_for('get_categoriestype', food_type='European')}}">European</a></li>
   <li class="divider"></li>
-   <li><a href="{{url_for('get_recipes')}}">Pub Meals</a></li>
+   <li><a href="{{url_for('get_categoriestype', food_type='Pub Meals')}}">Pub Meals</a></li>
 </ul>
 <nav>
   <div class="nav-wrapper">
