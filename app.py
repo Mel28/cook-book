@@ -58,7 +58,7 @@ def delete_recipe(recipe_id):
     return redirect(url_for('get_recipes'))
 
 @app.route('/get_categories/<food_type>')
-def get_categoriestype(food_type):
+def get_categories(food_type):
     return render_template('categories.html',
         categories=mongo.db.categories.find({food_type:food_type}))
         
