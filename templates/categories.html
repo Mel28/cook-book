@@ -9,12 +9,12 @@
             <div class="collapsible-header">
 
                 <div class="recipe_header col s9">
-                    <i class="material-icons">expand_more</i> {{recipe.recipe_name}} - {{recipe.category_name}}
+                    <i class="material-icons">expand_more</i> {{get_categories.recipe_name}} - {{food_type.category_name}}
                 </div>
             </div>
             <div class="collapsible-body">
                 <span>
-                    {{recipe.recipe_ingredients}} - {{recipe.recipe_method}}
+                    {{get_categories.recipe_ingredients}} - {{get_categories.recipe_method}}
                 </span>
             </div>
         </li>
