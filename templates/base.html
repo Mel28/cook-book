@@ -21,7 +21,7 @@
 <body>
     <header>
         <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content dropdown-trigger">
+<ul id="dropdown1" class="dropdown-content dropdown-trigger col s12 col-xs-12 col-sm-12">
   <li><a href="{{url_for('get_categories', food_type='Indian')}}">Indian</a></li>
   <li><a href="{{url_for('get_categories', food_type='Oriental')}}">Oriental</a></li>
   <li class="divider"></li>
@@ -31,8 +31,8 @@
   <li class="divider"></li>
    <li><a href="{{url_for('get_categories', food_type='Pub Meals')}}">Pub Meals</a></li>
 </ul>
-<nav>
-  <div class="nav-wrapper">
+<nav class="col s12 col-xs-12 col-sm-12">
+  <div class="nav-wrapper col s12 col-xs-12 col-sm-12">
     <a href="#!" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
       <li><a href="{{url_for('get_recipes')}}">Home</a></li>

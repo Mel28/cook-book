@@ -57,10 +57,15 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
-@app.route('/get_categories/<food_type>')
+"""@app.route('/get_categories/<food_type>')
 def get_categories(food_type):
     return render_template('categories.html',
-        categories=mongo.db.categories.find({food_type:food_type}))
+        categories=mongo.db.categories.find({food_type:food_type}))"""
+
+@app.route('/get_categories/<food_type>')
+def get_categories(food_type):
+    return render_template('categories.html', 
+        recipes=mongo.db.recipes.find({food_type:food_type}))
         
 @app.route('/delete_category/<category_id>')
 def delete_category(category_id):
