@@ -41,12 +41,12 @@ def update_recipe(recipe_id):
     recipes = mongo.db.recipes
     recipes.update( {'_id': ObjectId(recipe_id)},
     {
-        'recipe_name':request.form.get['recipe_name'],
-        'category_name':request.form.get['category_name'],
-        'recipe_ingredients': request.form.get['recipe_ingredients'],
-        'recipe_method': request.form.get['recipe_method'],
-        'contains_meat':request.form.get['contains_meat'],
-        'country_origin':request.form.get['country_origin']
+        'recipe_name':request.form.get('recipe_name'),
+        'category_name':request.form.get('category_name'),
+        'recipe_ingredients': request.form.get('recipe_ingredients'),
+        'recipe_method': request.form.get('recipe_method'),
+        'contains_meat':request.form.get('contains_meat'),
+        'country_origin':request.form.get('country_origin')
         
     })
     return redirect(url_for('get_recipes'))
@@ -57,35 +57,13 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
-"""@app.route('/get_categories/<food_type>')
-def get_categories(food_type):
-    return render_template('categories.html',
-        categories=mongo.db.categories.find({food_type:food_type}))"""
 
 @app.route('/get_categories/<food_type>')
 def get_categories(food_type):
     recipes=mongo.db.recipes.find({'food_type': food_type})
     return render_template('categories.html',
         recipes=recipes)
-        
-'''@app.route('/delete_category/<category_id>')
-def delete_category(category_id):
-    mongo.db.categories.remove({'_id': ObjectId(category_id)})
-    return redirect(url_for('get_categories'))
 
-    
-@app.route('/update_category/<category_id>', methods=['POST'])
-def update_category(category_id):
-    mongo.db.categories.update(
-        {'_id': ObjectId(category_id)},
-        {'category_name': request.form.get['category_name']})
-    return redirect(url_for('get_categories'))
-    
-@app.route('/insert_category', methods=['POST'])
-def insert_category():
-    category_doc = {'category_name': request.form.get('category_name')}
-    mongo.db.categories.insert_one(category_doc)
-    return redirect(url_for('get_categories'))'''
     
 
 if __name__ == '__main__':

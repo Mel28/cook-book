@@ -1,9 +1,11 @@
 #scroll
 {
-    height: 500px;
     overflow: auto;
 }
 
 .fixed{
     position: relative;
+}
+body {
+    font-family: 'Josefin Sans', sans-serif;
 }
