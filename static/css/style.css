@@ -9,3 +9,26 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
 }
+
+#DomHtml{
+    text-align: center;
+    
+}
+
+.brand-logo{
+    position: relative;
+    display: inline-block;
+}
+
+
+@media screen and (max-width: 605px) {
+img{
+    
+    display: none;
+}
+#DomHtml{
+    text-align: inherit;
+    
+}
+
+}
