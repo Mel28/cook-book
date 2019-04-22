@@ -20,6 +20,26 @@ body {
     display: inline-block;
 }
 
+@media screen and (max-width: 1000px){
+    
+
+ul:not(.browser-default)>li {
+    list-style-type: none;
+}
+nav ul li {
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    float: left;
+    padding: 0;
+}
+*, *:before, *:after {
+    box-sizing: unset;
+}
+
+#navStyle{
+    padding-left: 0;
+}
+}
 
 @media screen and (max-width: 605px) {
 img{
@@ -27,7 +47,7 @@ img{
     display: none;
 }
 #DomHtml{
-    text-align: inherit;
+    text-align: inline-block;
     
 }
 

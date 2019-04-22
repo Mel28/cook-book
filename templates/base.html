@@ -26,14 +26,14 @@
   <li class="divider"></li>
    <li><a href="{{url_for('get_categories', food_type='PubMeals')}}">Pub Meals</a></li>
 </ul>
-<nav class="col s12 col-xs-12 col-sm-12">
+<nav class="col s12 col-xs-12 col-sm-12" id="navStyle">
   <div id= "DomHtml" class="nav-wrapper col s12 col-xs-12 col-sm-12">
     <a href="#!" class="brand-logo"><img src="static/img/recipe-logo-1.jpg"></a>
-    <ul class="right hide-on-med-and-down">
+    <ul class="right ">
       <li><a href="{{url_for('get_recipes')}}">Home</a></li>
       <li><a href="{{url_for('add_recipe')}}">Add a Recipe</a></li>
       <!-- Dropdown Trigger -->
-      <li><a class="dropdown-trigger" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><a class="dropdown-trigger" href="#!" data-activates="dropdown1">Category<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
 </nav>

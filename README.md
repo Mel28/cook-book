@@ -2,8 +2,7 @@
 Hello!
 welcolme to my 4th milestone project. For this project we were tasked with creating an online recipe database where users can add recipies,
 edit recipes and delete recipes as they like. The home page displays all the recipes currently in the data base, you can filter by food type by using the
-dropdown list in the nav bar so if the data base gets large, users can filter to thier desired type of food recipe. There are like buttons next to each recipe
-on the home page so users can vote for thier favourate one.
+dropdown list in the nav bar so if the data base gets large, users can filter to thier desired type of food recipe.
 <h3>Steps taken to build application</h3>
 <li> sudo pip3 install flask comand to install flask</li>
 <li> sudo pip3 freeze --local > requirements.txt to create requirements file</li>
@@ -17,7 +16,9 @@ This then got expanded on during testing.</li>
 <li> by using jinja statements, I accesssed the MongoDB categories and refrenced the key value pairs (documents)</li>
 <h3>Functionality</h3>
 <h3> Style </h3>
-<h3> Testingand deployment </h3>
+<p> I have used materialize and bootstrap packages to give the app a more user friendly style and to help with responsive design.
+I have added my own media queries so the app is responsive and usable no matter what device the user is using.</p>
+<h3> Testing and deployment </h3>
 <li>Initial test:
 @app.route('/')
 def hello():
